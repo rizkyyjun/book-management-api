@@ -70,7 +70,7 @@ go run main.go
 
 #### Error Response (ISBN Already Exists)
 
-```json
+```
 Book with ISBN 1234567890 already exists
 ```
 
