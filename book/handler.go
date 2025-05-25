@@ -55,7 +55,7 @@ func MakeHandler(store *Store) http.Handler {
 		case http.MethodGet:
 			b, ok := store.Get(isbn)
 			if !ok {
-				http.Error(w, fmt.Sprintf("book with ISBN %s not found", isbn), http.StatusNotFound)
+				http.Error(w, fmt.Sprintf("Book with ISBN %s is not found", isbn), http.StatusNotFound)
 				return
 			}
 			w.Header().Set("Content-Type", "application/json")

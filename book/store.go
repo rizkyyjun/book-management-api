@@ -35,6 +35,7 @@ func (s *Store) GetAll(page, limit int) []Book {
 		books = append(books, b)
 	}
 
+	// Pagination
 	start := (page - 1) * limit
 	end := start + limit
 
@@ -53,6 +54,7 @@ func (s *Store) GetByCriteria(c Criteria) []Book {
 	s.mu.RLock()
 	defer s.mu.RUnlock()
 
+	// Filter
 	var filtered []Book
 	for _, b := range s.books {
 		if c.Title != "" && !strings.Contains(strings.ToLower(b.Title), strings.ToLower(c.Title)) {

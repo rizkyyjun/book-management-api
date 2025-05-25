@@ -54,7 +54,7 @@ go run main.go
 }
 ```
 
-#### Response
+#### Successful Response
 
 ```json
 {
@@ -66,6 +66,12 @@ go run main.go
     "release_date": "2024-01-01"
   }
 }
+```
+
+#### Error Response (ISBN Already Exists)
+
+```json
+Book with ISBN 1234567890 already exists
 ```
 
 ---
@@ -110,7 +116,7 @@ go run main.go
 #### Error
 
 ```
-book with ISBN 1234567890 is not found
+Book with ISBN 1234567890 is not found
 ```
 
 ---
@@ -144,6 +150,13 @@ book with ISBN 1234567890 is not found
 }
 ```
 
+#### Error
+
+```
+Book with ISBN 1234567890 is not found
+```
+
+
 ---
 
 ### ❌ Delete Book
@@ -157,6 +170,13 @@ book with ISBN 1234567890 is not found
   "message": "Book with ISBN 1234567890 successfully deleted"
 }
 ```
+
+#### Error
+
+```
+Book with ISBN 1234567890 is not found
+```
+
 
 ---
 
